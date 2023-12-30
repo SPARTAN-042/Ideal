@@ -70,11 +70,11 @@ public class SiteConnector {
     public void callEbay(String itemName) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
-        driver.navigate().to("https://www.newegg.com/global/uk-en/");
+        driver.navigate().to("");
 
-        driver.findElement(By.xpath("//*[@id=\"gh-ac\"]")).sendKeys(itemName);
+        driver.findElement(By.xpath("")).sendKeys(itemName);
 
-        String searchButton = "//*[@id=\"gh-btn\"]";
+        String searchButton = "";
 
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(searchButton)));
 
