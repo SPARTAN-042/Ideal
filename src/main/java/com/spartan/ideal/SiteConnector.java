@@ -14,6 +14,7 @@ public class SiteConnector {
 
     FirefoxDriver driver = new FirefoxDriver();
 
+
     public void callAmazon(String itemName)
     {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
@@ -41,6 +42,7 @@ public class SiteConnector {
         List<WebElement> fractionPrice;
         String price;
         WebElement link;
+
         for (WebElement item : items) {
 
             img = item.findElement(By.xpath(".//img[@class = 's-image']"));
@@ -70,7 +72,7 @@ public class SiteConnector {
     public void callEbay(String itemName) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
-        driver.navigate().to("");
+        driver.navigate().to("https://www.ebay.co.uk/");
 
         driver.findElement(By.xpath("")).sendKeys(itemName);
 
@@ -78,6 +80,48 @@ public class SiteConnector {
 
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(searchButton)));
 
+        driver.findElement(By.xpath(searchButton)).click();
 
+        List<String> productName = new ArrayList<>();
+        List<String> productImage = new ArrayList<>();
+        List<String> productPrice = new ArrayList<>();
+        List<String> productLink = new ArrayList<>();
+
+        List<WebElement> items = driver.findElements(By.xpath("//div[contains(@class, 's-result-item s-asin')]"));
+
+        WebElement img;
+        WebElement name;
+        List<WebElement> wholePrice;
+        List<WebElement> fractionPrice;
+        String price;
+        WebElement link;
+    }
+
+    public void callOnbuy(String itemName) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+
+        driver.navigate().to("https://www.onbuy.com/gb/");
+
+        driver.findElement(By.xpath("")).sendKeys(itemName);
+
+        String searchButton = "";
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(searchButton)));
+
+        driver.findElement(By.xpath(searchButton)).click();
+
+        List<String> productName = new ArrayList<>();
+        List<String> productImage = new ArrayList<>();
+        List<String> productPrice = new ArrayList<>();
+        List<String> productLink = new ArrayList<>();
+
+        List<WebElement> items = driver.findElements(By.xpath("//div[contains(@class, 's-result-item s-asin')]"));
+
+        WebElement img;
+        WebElement name;
+        List<WebElement> wholePrice;
+        List<WebElement> fractionPrice;
+        String price;
+        WebElement link;
     }
 }

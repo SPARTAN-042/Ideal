@@ -24,5 +24,6 @@ public class IdealApplication {
 
 		siteConnector.callAmazon(itemName);
 		siteConnector.callEbay(itemName);
+		siteConnector.callOnbuy(itemName);
 	}
 }
