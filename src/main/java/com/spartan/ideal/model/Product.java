@@ -1,15 +1,15 @@
 package com.spartan.ideal.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Product {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int userId;
+    private Long productId;
 
     private String productName;
     private String description;
@@ -17,12 +17,19 @@ public class Product {
     private String imgUrl;
     private String productLink;
 
-    public int getUserId() {
-        return userId;
+    @OneToMany(mappedBy = "product")
+    private List<TrackedItem> trackedItems;
+
+    @ManyToOne
+    @JoinColumn(name = "website_id")
+    private Website website;
+
+    public Long getUserId() {
+        return productId;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setProductId(Long userId) {
+        this.productId = productId;
     }
 
     public String getProductName() {

@@ -1,9 +1,6 @@
 package com.spartan.ideal.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class TrackedItem {
@@ -12,5 +9,19 @@ public class TrackedItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long trackedItemId;
 
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private Product product;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    public Long getTrackedItemId() {
+        return trackedItemId;
+    }
+
+    public void setTrackedItemId(Long trackedItemId) {
+        this.trackedItemId = trackedItemId;
+    }
 }
