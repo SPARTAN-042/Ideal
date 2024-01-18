@@ -1,24 +1,18 @@
-<!-- src/main/resources/templates/layout.html -->
-
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
-  <!-- Include your common CSS stylesheets here -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
   <header>
-    <!-- Your common header content goes here -->
     <h1>My Website</h1>
   </header>
 
-<!-- Include the content fragment -->
   <div layout:fragment="content"></div>
 
   <footer>
-    <!-- Your common footer content goes here -->
     <p>&copy; 2023 My Website</p>
   </footer>
 </body>
