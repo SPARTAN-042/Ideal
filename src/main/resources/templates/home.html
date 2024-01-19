@@ -1,11 +1,15 @@
-<!-- src/main/resources/templates/home.html -->
-
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorate="~{layout}" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
 <head>
   <title>Home Page</title>
 </head>
-  <body>
-  <section layout:fragment="content"></section>
-  </body>
+<body>
+<section layout:fragment="content">
+  <h2>Welcome!</h2>
+  <form action="">
+    <label for="search_query">Search Query</label>
+    <input type="text" id="search_query" name="search_query">
+  </form>
+</section>
+</body>
 </html>

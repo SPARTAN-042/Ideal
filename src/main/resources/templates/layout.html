@@ -1,25 +1,25 @@
-<!-- src/main/resources/templates/layout.html -->
-
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-  <!-- Include your common CSS stylesheets here -->
+  <title>Layout Page</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-  <header>
-    <!-- Your common header content goes here -->
-    <h1>My Website</h1>
-  </header>
+<header>
+  <h1 class="text-3xl font-bold underline">Very Nice!</h1>
+</header>
+<nav>
+  <ul>
+    <li><a>Home</a></li>
+    <li><a>Lists</a></li>
+    <li><a>About</a></li>
+  </ul>
+</nav>
+<section id="content" layout:fragment="content">
 
-<!-- Include the content fragment -->
-  <div layout:fragment="content"></div>
-
-  <footer>
-    <!-- Your common footer content goes here -->
-    <p>&copy; 2023 My Website</p>
-  </footer>
+</section>
+<footer>
+  &copy;Ideal
+</footer>
 </body>
 </html>
