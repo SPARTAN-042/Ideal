@@ -154,14 +154,6 @@ public class SiteConnector {
             wholePrice = item.findElements(By.xpath(""));
             fractionPrice = item.findElements(By.xpath(""));
 
-            if (!wholePrice.isEmpty() && !fractionPrice.isEmpty()) {
-                price = String.join(".",wholePrice.get(0).getText(), fractionPrice.get(0).getText());
-            } else {
-                price = "0";
-
-            }
-            productPrice.add(price);
-
 
             link = item.findElement(By.xpath(".//a[@class = 'a-link-normal s-underline-text s-underline-link-text s-link-style a-text-normal']"));
             productLink.add(link.getAttribute("href"));
