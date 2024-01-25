@@ -97,7 +97,7 @@ public class SiteConnector {
         List<String> productPrice = new ArrayList<>();
         List<String> productLink = new ArrayList<>();
 
-        List<WebElement> items = driver.findElements(By.xpath(""));
+        List<WebElement> items = driver.findElements(By.xpath("//div[contains(@class, 's-item__wrapper clearfix')"));
 
         WebElement img;
         WebElement name;
@@ -108,7 +108,7 @@ public class SiteConnector {
 
         for (WebElement item : items) {
 
-            img = item.findElement(By.xpath(""));
+            img = item.findElement(By.xpath(".//div[class=\"s-item__image-wrapper image-treatment\""));
             productImage.add(img.getAttribute(""));
 
             name = item.findElement(By.xpath(""));
