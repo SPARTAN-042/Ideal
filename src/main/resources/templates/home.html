@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}" lang="en">
 <head>
-  <title>Home Page</title>
+    <title>Home Page</title>
 </head>
 <body>
 <section layout:fragment="content">
-  <h2>Welcome!</h2>
-  <form action="">
-    <label for="search_query">Search Query</label>
-    <input type="text" id="search_query" name="search_query">
-  </form>
+    <h2 class="text-4xl">Welcome!</h2>
+    <form action="">
+        <label for="search_query">Search Query</label>
+        <input class="border-0 py-1.5" type="text" id="search_query" name="search_query">
+    </form>
 </section>
 </body>
 </html>

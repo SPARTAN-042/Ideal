@@ -1,0 +1,19 @@
+{
+  "name": "theideal",
+  "version": "1.0.0",
+  "description": "Ultimately the core of the project is utilizing web scraping and aggregation to collect specific product data to organize and compare deals across sites all in one place. In order to achieve this I will use Selenium, a browser automation tool allowing me to accumulate information from webpages or files. In this case, a select number of websites will be used to search for a product, and data pertaining to the item name, a supporting image, price and description will be gathered and compiled into a concise list which can be filtered and rearranged according to the user.",
+  "main": "index.js",
+  "scripts": {
+    "build:postcss": "SET NODE_ENV=production & postcss src/main/resources/static/css/style.tailwind.css -o target/classes/static/css/style.build.tailwind.css",
+    "watch:postcss": "SET NODE_ENV=development & postcss src/main/resources/static/css/style.tailwind.css -o src/main/resources/static/css/style.dev.tailwind.css -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.33",
+    "postcss-cli": "^11.0.0",
+    "tailwindcss": "^3.4.1"
+  }
+}
