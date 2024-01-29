@@ -4,17 +4,19 @@
   <title>Layout Page</title>
   <link rel="stylesheet" href="/css/style.dev.tailwind.css" th:href="@{/css/style.dev.tailwind.css}"/>
   <link href="https://fonts.googleapis.com/css2?family=Exo&family=Lato&family=Montserrat&family=Open+Sans&family=Raleway&family=Roboto&display=swap" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
-<body class="">
+<body class="font-body">
 <nav class="bg-blue-950 p-5 shadow md:flex md:items-center md:justify-between">
   <div class="flex justify-between items-center">
-    <h1 class="text-2xl font-bold bg-white rounded p-1 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">IDEAL</h1>
+    <h1 class="font-logo text-2xl font-bold bg-white rounded p-1 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">IDEAL</h1>
     <span class="text-3xl cursor-pointer mx-2 md:hidden block">
-      <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+      <ion-icon class="text-white" name="menu-outline" onclick="Menu(this)"></ion-icon>
     </span>
   </div>
 
-  <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-blue-950 w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+  <ul class="md:flex md:items-center z-[1] md:z-auto md:static absolute bg-blue-950 w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
     <li class="mx-4 my-6 md:my-0">
       <a th:href="@{/}" class="text-xl text-white font-header hover:text-[#2ECC71] duration-500">Home</a>
     </li>
@@ -27,14 +29,20 @@
   </ul>
 </nav>
 <section class="m-1" id="content" layout:fragment="content"></section>
-<footer>
-  &copy;Ideal
+<footer class="flex flex-col text-center bg-blue-950 p-2 items-center sticky bottom-0">
+  <div class="text-center">
+    <span class="text-white font-accent">&copy; 2023 Ideal</span>
+  </div>
 </footer>
 
 <script>
   function Menu(e){
     let list = document.querySelector('ul');
-    e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]'), list.classList.add('opacity-100')) :( e.name = "menu" ,list.classList.remove('top-[80px]'),list.classList.remove('opacity-100'))
+
+    e.name === 'menu-outline' ? (e.name = "close",list.classList.
+    add('top-[80px]'), list.classList.add('opacity-100')
+    ) :( e.name = "menu-outline" ,list.classList.remove('top-' +
+            '[80px]'),list.classList.remove('opacity-100'))
   }
 </script>
 </body>
