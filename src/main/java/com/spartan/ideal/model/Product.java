@@ -12,8 +12,7 @@ public class Product {
     private Long productId;
 
     private String productName;
-    private String description;
-    private int price;
+    private String price;
     private String imgUrl;
     private String productLink;
 
@@ -40,19 +39,11 @@ public class Product {
         this.productName = productName;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public int getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
