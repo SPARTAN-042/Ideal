@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+</head>
+<body>
+<section id="content" layout:fragment="content">
+    <h2 class="text-2xl font-header">Search Results:</h2>
+    <div th:each="product : ${products}">
+        <img th:src="${product.imgUrl}" alt="Product Image"/>
+        <h2 th:text="${product.productName}"></h2>
+        <p th:text="${product.price}"></p>
+        <a th:href="${product.productLink}" target="_blank">View Product</a>
+    </div>
+</section>
+</body>
+</html>
