@@ -1,4 +1,4 @@
-package com.spartan.ideal;
+package com.spartan.ideal.config;
 
 import nz.net.ultraq.thymeleaf.layoutdialect.LayoutDialect;
 import org.springframework.context.annotation.Bean;
