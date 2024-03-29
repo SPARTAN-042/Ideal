@@ -5,10 +5,12 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name = "product")
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "product_id")
     private Long productId;
 
     private String productName;
@@ -16,18 +18,19 @@ public class Product {
     private String imgUrl;
     private String productLink;
 
-    @OneToMany(mappedBy = "product")
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
     private List<TrackedItem> trackedItems;
 
     @ManyToOne
     @JoinColumn(name = "website_id")
     private Website website;
 
-    public Long getUserId() {
+    public Long getProductId() {
         return productId;
     }
 
-    public void setProductId(Long userId) {
+    public void setProductId(Long productId) {
         this.productId = productId;
     }
 
@@ -61,5 +64,21 @@ public class Product {
 
     public void setProductLink(String productLink) {
         this.productLink = productLink;
+    }
+
+    public List<TrackedItem> getTrackedItems() {
+        return trackedItems;
+    }
+
+    public void setTrackedItems(List<TrackedItem> trackedItems) {
+        this.trackedItems = trackedItems;
+    }
+
+    public Website getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(Website website) {
+        this.website = website;
     }
 }
