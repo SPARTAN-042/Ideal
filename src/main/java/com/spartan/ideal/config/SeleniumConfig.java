@@ -1,4 +1,4 @@
-package com.spartan.ideal;
+package com.spartan.ideal.config;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.springframework.context.annotation.Bean;
