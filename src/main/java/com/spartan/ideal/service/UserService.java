@@ -3,31 +3,21 @@ package com.spartan.ideal.service;
 import com.spartan.ideal.model.User;
 import com.spartan.ideal.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class UserService {
 
-    @Autowired
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
-    public List<User> getAllUsers() {
-        return userRepository.findAll();
+    private static final List<User> users = new ArrayList<>();
+
+    public UserService(UserRepository userRepository){
+        this.userRepository = userRepository;
     }
-
-    public User getUserById(Long id) {
-        return userRepository.findById(id).orElse(null);
-    }
-
-    public User saveUser(User user) {
-        return userRepository.save(user);
-    }
-
-    public void deleteUser(Long id) {
-        userRepository.deleteById(id);
-    }
-
 
 }
